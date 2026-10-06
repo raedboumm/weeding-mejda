@@ -6,7 +6,19 @@ const welcomeGate = document.querySelector('#welcomeGate');
 const enterButton = document.querySelector('#enterButton');
 let toastTimer;
 
+const SONG_START = 8;
+
 weddingSong.volume = 0.72;
+
+function seekToSongStart() {
+  weddingSong.currentTime = SONG_START;
+}
+
+if (weddingSong.readyState >= 1) {
+  seekToSongStart();
+} else {
+  weddingSong.addEventListener('loadedmetadata', seekToSongStart, { once: true });
+}
 
 function setMusicState(isPlaying) {
   musicButton.setAttribute('aria-pressed', String(isPlaying));
@@ -62,7 +74,8 @@ musicButton.addEventListener('click', async () => {
 });
 
 weddingSong.addEventListener('ended', () => {
-  setMusicState(false);
+  seekToSongStart();
+  weddingSong.play().catch(() => setMusicState(false));
 });
 
 const countdownTarget = new Date('2026-10-18T16:00:00+01:00').getTime();

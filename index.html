@@ -3,21 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f8f3e9">
+  <meta name="theme-color" content="#fdf8f6">
   <meta name="description" content="دعوة زفاف هشام و ماجدة">
   <title>هشام و ماجدة | دعوة زفاف</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='%23d9a1a8'%3E%3Cellipse cx='20' cy='10' rx='6' ry='9'/%3E%3Cellipse cx='20' cy='10' rx='6' ry='9' transform='rotate(72 20 20)'/%3E%3Cellipse cx='20' cy='10' rx='6' ry='9' transform='rotate(144 20 20)'/%3E%3Cellipse cx='20' cy='10' rx='6' ry='9' transform='rotate(216 20 20)'/%3E%3Cellipse cx='20' cy='10' rx='6' ry='9' transform='rotate(288 20 20)'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='3.5' fill='%23a65d68'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
+  <!-- Reusable floral shapes, referenced with <use> below -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="blossom" viewBox="0 0 40 40">
+        <g fill="currentColor" fill-opacity=".35" stroke="currentColor" stroke-width=".8">
+          <ellipse cx="20" cy="10" rx="6" ry="9"/>
+          <ellipse cx="20" cy="10" rx="6" ry="9" transform="rotate(72 20 20)"/>
+          <ellipse cx="20" cy="10" rx="6" ry="9" transform="rotate(144 20 20)"/>
+          <ellipse cx="20" cy="10" rx="6" ry="9" transform="rotate(216 20 20)"/>
+          <ellipse cx="20" cy="10" rx="6" ry="9" transform="rotate(288 20 20)"/>
+        </g>
+        <circle cx="20" cy="20" r="3.2" fill="currentColor"/>
+      </symbol>
+      <symbol id="rose" viewBox="0 0 48 48">
+        <path fill="currentColor" fill-opacity=".22" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" d="M24 5C33 5 40 12 40 21c0 8-7 16-16 16S8 29 8 21C8 12 15 5 24 5z"/>
+        <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+          <path d="M24 14c-4 0-7 3-7 7 0 4 3 7 7 7s7-3 7-7c0-3-2-5-5-5-2 0-3 1.5-3 3s1 2.5 2.5 2.5"/>
+          <path d="M14 28c3 4 6 6 10 6s7-2 10-6"/>
+        </g>
+      </symbol>
+      <symbol id="leaf" viewBox="0 0 40 20">
+        <path fill="currentColor" fill-opacity=".45" stroke="currentColor" stroke-width=".8" d="M1 10C10 -2 28 -2 39 10 28 22 10 22 1 10Z"/>
+        <path fill="none" stroke="currentColor" stroke-width=".6" opacity=".7" d="M4 10H34"/>
+      </symbol>
+    </defs>
+  </svg>
+
   <div class="welcome-gate" id="welcomeGate">
+    <svg class="gate-flower gate-flower-a" aria-hidden="true"><use href="#rose"/></svg>
+    <svg class="gate-flower gate-flower-b" aria-hidden="true"><use href="#blossom"/></svg>
     <div class="gate-card">
       <span class="gate-kicker">دعوة من القلب</span>
       <div class="gate-monogram">H <span>&amp;</span> M</div>
       <p>يسعدنا حضوركم<br>في أجمل بداية لنا</p>
-      <button class="gate-button" id="enterButton" type="button">فتح الدعوة <span aria-hidden="true">✦</span></button>
+      <button class="gate-button" id="enterButton" type="button">فتح الدعوة <svg class="icon-blossom icon-small" aria-hidden="true"><use href="#blossom"/></svg></button>
       <small>اضغطوا لبدء الموسيقى</small>
     </div>
   </div>
@@ -42,23 +72,34 @@
       <div class="hero-copy reveal">
         <p class="eyebrow">بسم الله الرحمن الرحيم</p>
         <p class="hero-verse">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنْفُسِكُمْ أَزْوَاجًا<br>لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
-        <span class="gold-rule" aria-hidden="true"><i></i><b>✦</b><i></i></span>
+        <span class="floral-rule" aria-hidden="true"><i></i><svg class="icon-blossom" viewBox="0 0 40 40"><use href="#blossom"/></svg><i></i></span>
         <p class="invitation-line">بكل مشاعر الفرح والسرور</p>
         <h1 id="hero-title">هشام <span>&amp;</span> ماجدة</h1>
         <p class="hero-subtitle">يتشرّفان بدعوتكم لحضور حفل زفافهما</p>
         <a class="primary-button" href="#details">اكتشفوا تفاصيل الليلة <span aria-hidden="true">↓</span></a>
       </div>
       <div class="hero-art reveal" aria-hidden="true">
-        <div class="portrait-frame">
+        <div class="arch-frame">
           <div class="frame-inner">
             <span class="frame-script"><b>H</b><small>&amp;</small><b>M</b></span>
             <span class="frame-caption">A new chapter begins</span>
           </div>
+          <svg class="bouquet" viewBox="0 0 300 180" focusable="false">
+            <path d="M150 178Q146 140 150 96" fill="none" stroke="#8aa385" stroke-width="2" stroke-linecap="round"/>
+            <use href="#leaf" x="28" y="104" width="92" height="46" transform="rotate(-24 74 127)" style="color:#8aa385"/>
+            <use href="#leaf" x="180" y="104" width="92" height="46" transform="rotate(24 226 127)" style="color:#8aa385"/>
+            <use href="#leaf" x="84" y="124" width="70" height="36" transform="rotate(-58 119 142)" style="color:#8aa385"/>
+            <use href="#leaf" x="146" y="124" width="70" height="36" transform="rotate(58 181 142)" style="color:#8aa385"/>
+            <use href="#rose" x="42" y="70" width="58" height="58" style="color:#c9848c"/>
+            <use href="#rose" x="200" y="70" width="58" height="58" style="color:#c9848c"/>
+            <use href="#rose" x="106" y="28" width="88" height="88" style="color:#a65d68"/>
+            <use href="#blossom" x="16" y="18" width="30" height="30" style="color:#d9a1a8"/>
+            <use href="#blossom" x="254" y="12" width="30" height="30" style="color:#d9a1a8"/>
+          </svg>
         </div>
-        <div class="leaf leaf-left"></div>
-        <div class="leaf leaf-right"></div>
-        <span class="sparkle sparkle-a">✦</span>
-        <span class="sparkle sparkle-b">✧</span>
+        <svg class="float-blossom blossom-a" viewBox="0 0 40 40"><use href="#blossom"/></svg>
+        <svg class="float-blossom blossom-b" viewBox="0 0 40 40"><use href="#blossom"/></svg>
+        <svg class="float-blossom blossom-c" viewBox="0 0 48 48"><use href="#rose"/></svg>
       </div>
     </section>
 
@@ -68,7 +109,7 @@
         <h2 id="story-title">لحظة نودّ أن نشارككم بها</h2>
         <p>بفرح كبير، نفتح صفحة جديدة من حكايتنا وننتظر حضوركم ليكتمل جمالها.</p>
       </div>
-      <div class="ornament-line" aria-hidden="true"><span></span><b>❦</b><span></span></div>
+      <div class="ornament-line" aria-hidden="true"><span></span><svg class="icon-blossom" viewBox="0 0 40 40"><use href="#rose"/></svg><span></span></div>
     </section>
 
     <section class="details section-shell" id="details" aria-labelledby="details-title">
@@ -125,11 +166,11 @@
   <footer class="footer section-shell">
     <div class="footer-mark">H<span>&amp;</span>M</div>
     <p>وجودكم أجمل هدية</p>
-    <span class="footer-flourish" aria-hidden="true">❦</span>
+    <svg class="footer-flourish" viewBox="0 0 40 40" aria-hidden="true"><use href="#blossom"/></svg>
   </footer>
 
-  <audio id="weddingSong" loop preload="auto" autoplay playsinline>
-    <source src="عروسة النور  %23محمد_المقيط 2016.mp3" type="audio/mpeg">
+  <audio id="weddingSong" preload="auto" autoplay playsinline>
+    <source src="سامي يوسف , اللهم صل على سيدنا محمد النبي الأمي وعلى اله وصحبه وسلم    Sami Yusuf , supplication.mp3" type="audio/mpeg">
   </audio>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="script.js?v=4"></script>
